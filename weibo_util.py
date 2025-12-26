@@ -16,7 +16,7 @@ cookie_file = 'cookie.txt'
 
 
 def pre_login():
-    pre_login_url = 'http://login.sina.com.cn/sso/prelogin.php?entry=weibo&callback=sinaSSOController.preloginCallBack&su=MTUyNTUxMjY3OTY%3D&rsakt=mod&checkpin=1&client=ssologin.js%28v1.4.18%29&_=1458836718537'
+    pre_login_url = 'https://login.sina.com.cn/sso/prelogin.php?entry=weibo&callback=sinaSSOController.preloginCallBack&su=MTUyNTUxMjY3OTY%3D&rsakt=mod&checkpin=1&client=ssologin.js%28v1.4.18%29&_=1458836718537'
     pre_response = requests.get(pre_login_url).text
     pre_content_regex = r'\((.*?)\)'
     patten = re.search(pre_content_regex, pre_response)
@@ -128,5 +128,3 @@ if __name__ == '__main__':
     if not filename:
         parser.error("Incorrect number of arguments")
     print get_image(filename, username, password)
-
-
